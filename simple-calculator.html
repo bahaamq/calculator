@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<link rel="stylesheet" type="text/css" href="calc.css">
+</head>
+<body>
+
+<div class="container">
+
+	<input type="text" id="screen" value="" size="25" autofocus="autofocus">
+		<i> MQ </i>
+	<div class="row1">
+		<button class="btn" onclick="off()"> ce </button>
+	<button class="btn" onclick="mul()" disabled> *  </button>
+		<button class="btn" onclick="divs()" disabled> /  </button>
+<button class="btn" onclick="plu()" disabled> + </button>
+<button class="btn" onclick="min()" disabled> - </button>
+
+   </div>
+
+
+
+
+
+<!-- end row 1 -->
+
+
+	<div class="row2">
+				<button class="num one" onclick="one()"> 1   </button>
+	
+		<button class="num four"> 4   </button>
+		<button class="num seven"> 7 </button>
+
+   </div>
+
+
+
+
+
+	<div class="row2">
+				<button class="num two"> 2   </button>
+	
+		<button class="num" id="5" > 5  </button>
+		<button class="num eight"> 8 </button>
+	
+   </div>
+
+
+   	<div class="row3">
+		<button class="num three"> 3</button>
+		<button class="num six"> 6  </button>
+		<button class="num nine"> 9 </button>
+		
+   </div>
+
+	<button class="equal" onclick="equ()"> <label>=</label> </button>
+
+
+
+<button class="floating" onclick="float()"> <label>.</label> </button>
+
+<button class="zero" onclick="nm0()"><label>0</label> </button>
+</div>
+
+
+
+<script type="text/javascript">
+
+ var calcu="";
+
+var zz=document.getElementsByClassName("num");
+
+var counter;
+
+
+/* for each col*/ 
+	var row=0;
+
+
+/* counter to go from col to col */ 
+	var temp=1;
+
+
+/* a variable that i used to set the right value for temp for each time it goes from a col to another */ 
+	var row2=2;
+
+
+for (counter = 0; counter < 9; counter++) 
+{
+
+ /* this is to set onclick properety which calls a function for each number in the calculater */ 
+ 		zz[counter].setAttribute("onclick","nm"+temp+"()");
+
+
+temp+=3;
+row++;
+if(row %3==0)
+{
+	temp=row2;
+	row2++;
+}
+
+}
+
+//start row 1 in calculater
+
+function off()
+{
+	calcu="";
+document.getElementById("screen").value=" ";
+}
+
+function mul()
+{
+
+calcu=calcu+"*";
+document.getElementById("screen").value=calcu;
+
+disapleoperators();
+}
+
+function plu()
+{
+
+calcu=calcu+"+";
+document.getElementById("screen").value=calcu;
+disapleoperators();
+}
+
+function divs()
+{
+
+calcu=calcu+"/";
+document.getElementById("screen").value=calcu;
+disapleoperators();
+}
+function min()
+{
+
+calcu=calcu+"-";
+document.getElementById("screen").value=calcu;
+disapleoperators();
+}
+
+//end row 1 in calculater
+
+
+
+function nm1()
+{
+	
+	calcu=calcu+1;
+	document.getElementById("screen").value=calcu;
+	disap();
+
+}
+
+
+
+function nm2()
+{
+	
+	calcu=calcu+2;
+	document.getElementById("screen").value=calcu;
+	disap();
+}
+
+
+
+
+
+function nm3()
+{
+	
+	calcu=calcu+3;
+	document.getElementById("screen").value=calcu;
+	disap();
+	
+
+}
+
+
+
+function nm4()
+{
+	
+	calcu=calcu+4;
+	document.getElementById("screen").value=calcu;
+	disap();
+}
+
+
+
+function nm5()
+{
+	
+	calcu=calcu+5;
+	document.getElementById("screen").value=calcu;
+	disap();
+}
+
+
+
+function nm6()
+{
+	
+	calcu=calcu+6;
+	document.getElementById("screen").value=calcu;
+	disap();
+}
+
+
+
+function nm7()
+{
+	
+	calcu=calcu+7;
+	document.getElementById("screen").value=calcu;
+	disap();
+}
+
+
+
+function nm8()
+{
+	
+	calcu=calcu+8;
+	document.getElementById("screen").value=calcu;
+	disap();
+}
+
+
+
+function nm9()
+{
+	
+	calcu=calcu+9;
+	document.getElementById("screen").value=calcu;
+	disap();
+}
+
+
+
+function nm0()
+{
+	
+	calcu=calcu+0;
+	document.getElementById("screen").value=calcu;
+	disap();
+}
+
+
+
+
+
+
+
+function equ()
+{
+// the value is taken from the input box so that you can enter the value by clicking in the clculater or by keybored
+
+var y=document.getElementById("screen").value;
+
+var evaluation= eval(y);
+document.getElementById("screen").value=evaluation;
+
+
+y=evaluation;
+}
+
+
+function float()
+{
+
+calcu=calcu+".";
+document.getElementById("screen").value=calcu;
+disapleoperators();
+}
+
+//this function is to enable mathmatical expression after the user input a number
+function disap()
+{
+	var dis=document.getElementsByClassName("btn");
+
+	var cc=0;
+while(dis != null)
+{
+dis[cc].removeAttribute('disabled');
+cc++;
+}
+
+
+}
+
+function disapleoperators()
+{
+var dis=document.getElementsByClassName("btn");
+	var cc=0;
+while(dis != null)
+{
+dis[cc].disabled=true;
+cc++;
+}
+
+
+}
+
+
+</script>
+</body>
+</html>

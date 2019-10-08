@@ -1,0 +1,78 @@
+.container
+{
+background-color: lightblue;
+display:inline-block;
+
+width:250px;
+margin: 9% 40%;
+padding: 0.5% 1%;
+
+
+}
+
+
+.btn
+{
+	padding : 5%;
+   margin-left: 3%;
+   margin-top: 2%;
+
+
+}
+.num
+{
+	   margin-left: 12%;
+	   margin-top: 3%;
+
+	padding : 5%;
+}
+
+#screen
+{
+	margin-bottom: 5%;
+	margin-top: 5%;
+	padding: 2.5%
+
+	
+}
+
+.equal
+{
+
+	margin-top: 5%;
+	  margin-left: 10%;
+	  float: left;
+}
+
+
+.equal label
+{
+	font-size: 100px;
+}
+
+.floating,.zero
+{
+	float: left;
+padding:5% 6%;
+
+
+}
+
+.floating 
+{
+
+margin-top: 12%;
+margin-left: 12%;
+
+}
+
+.zero
+{
+	margin-top: 32%;
+}
+.floating label , .zero label
+{
+	font-weight: bolder;
+	font-size: 21px;
+}
+
